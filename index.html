@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization -->
+    <title>Gonik Health | Excelência em Saúde e Bem-Estar</title>
+    <meta name="description"
+        content="A Gonik Health é uma clínica de saúde multidisciplinar de Juiz de Fora - MG, dedicada a oferecer o mais alto padrão de atendimento médico. Agende sua consulta.">
+    <meta name="keywords"
+        content="clínica de saúde, médicos, Gonik Health, agendamento de consulta, medicina, Juiz de Fora">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Gonik Health | Sua Saúde em Primeiro Lugar">
+    <meta property="og:description"
+        content="Clínica médica multidisciplinar em Juiz de Fora. Atendimento humanizado e tecnologia de ponta.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Customizing Tailwind to meet the premium blue/white requirement
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="antialiased bg-slate-50 relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            <i data-lucide="crosshair"></i>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight text-brand-900">Gonik <span
+                                class="text-brand-500 font-light">Health</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Início</a>
+                    <a href="#sobre"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Sobre Nós</a>
+                    <a href="#servicos"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Serviços</a>
+                    <a href="#profissionais"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Equipe
+                        Médica</a>
+                    <a href="#contato"
+                        class="px-5 py-2.5 rounded-full bg-brand-600 text-white font-medium text-sm hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/30 transition-all">Agendar
+                        Consulta</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Início</a>
+                <a href="#sobre"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Sobre
+                    Nós</a>
+                <a href="#servicos"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Serviços</a>
+                <a href="#profissionais"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Equipe
+                    Médica</a>
+                <a href="#contato"
+                    class="block px-3 py-2 mt-4 rounded-md text-base font-bold text-brand-600 bg-brand-50 hover:bg-brand-100 text-center">Agendar
+                    Consulta</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. PÁGINA INICIAL (HOME) -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+        <!-- Decorative background blobs -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
+            <div
+                class="absolute top-20 -left-20 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob">
+            </div>
+            <div
+                class="absolute top-40 -right-20 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-sm font-semibold mb-6 border border-brand-100">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                        </span>
+                        Aberto hoje até as 20h
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+                        Cuidando de você com a <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-700">excelência</span>
+                        que você merece.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                        A Gonik Health é a clínica referencial em Juiz de Fora. Unimos atendimento humanizado à mais
+                        alta tecnologia para o seu bem-estar físico e mental.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contato"
+                            class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-brand-600 text-white font-semibold text-lg hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/40 transition-all transform hover:-translate-y-1">
+                            Agendar consulta
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#servicos"
+                            class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-white text-slate-700 font-semibold text-lg border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all">
+                            Nossos serviços
+                        </a>
+                    </div>
+
+                    <!-- Trust metrics -->
+                    <div class="mt-10 pt-10 border-t border-slate-100 flex items-center gap-8">
+                        <div>
+                            <p class="text-3xl font-bold text-slate-900">+10k</p>
+                            <p class="text-sm text-slate-500 font-medium">Pacientes Felizes</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-slate-900">15+</p>
+                            <p class="text-sm text-slate-500 font-medium">Especialidades</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative fade-in-up" style="transition-delay: 200ms;">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-900/5 hover-lift">
+                        <img src="img/hero.png" alt="Recepção Moderna da Gonik Health"
+                            class="w-full h-[500px] object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce"
+                        style="animation-duration: 3s;">
+                        <div
+                            class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Equipe Médica</p>
+                            <p class="text-brand-900 font-bold">100% Certificada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SOBRE A CLÍNICA -->
+    <section id="sobre" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative fade-in-up">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="img/sobre1.png" alt="Ambiente acolhedor"
+                            class="rounded-2xl h-64 object-cover w-full shadow-md mt-8 hover-lift" />
+                        <img src="img/sobre2.png" alt="Equipamentos modernos"
+                            class="rounded-2xl h-80 object-cover w-full shadow-lg hover-lift" />
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 fade-in-up">
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-3">Sobre a Clínica</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Medicina Avançada
+                        com um Toque Humano</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Fundada com o propósito de transformar a experiência na área da saúde, a <strong
+                            class="text-slate-800">Gonik Health</strong> não é apenas uma clínica multidisciplinar, mas
+                        um ecossistema completo focado prioritariamente em você.
+                    </p>
+                    <div class="space-y-6 mt-8">
+                        <!-- Missão e Visão -->
+                        <div class="flex flex-col gap-6">
+                            <div
+                                class="flex gap-4 p-5 rounded-2xl bg-white shadow-sm border border-slate-100 hover-lift">
+                                <div
+                                    class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600">
+                                    <i data-lucide="target" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2">Nossa Missão</h4>
+                                    <p class="text-slate-600 leading-relaxed">Prover assistência médica de nível
+                                        excepcional em Juiz de Fora, integrando competência técnica a um atendimento
+                                        sensível e acolhedor.</p>
+                                </div>
+                            </div>
+                            <!-- Diferenciais -->
+                            <div
+                                class="flex gap-4 p-5 rounded-2xl bg-white shadow-sm border border-slate-100 hover-lift">
+                                <div
+                                    class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600">
+                                    <i data-lucide="award" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2">Nossos Diferenciais</h4>
+                                    <p class="text-slate-600 leading-relaxed">Agendamento prático via WhatsApp,
+                                        infraestrutura premium recém-inaugurada e um corpo clínico estritamente
+                                        selecionado entre os melhores da região.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVIÇOS/ESPECIALIDADES (Movido antes dos profissionais para melhor fluxo) -->
+    <section id="servicos" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-3">Nossas Especialidades</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Tratamento Completo num Só Lugar
+                </h3>
+                <p class="text-lg text-slate-600">Oferecemos uma vasta gama de procedimentos e consultas com
+                    equipamentos modernos pontualmente focados na sua recuperação e prevenção.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Serviço 1-->
+                <div
+                    class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover-lift fade-in-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="img/doc1.png" alt="Dra. Helena Barros - Cardiologia"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 -mt-12 mb-4 relative z-10 border border-slate-100">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Cardiologia</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Diagnóstico e tratamento de doenças do coração
+                            com exames essenciais de eletro e ecocardiograma.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 2-->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover-lift fade-in-up"
+                    style="transition-delay: 100ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="img/service_orto.png" alt="Ortopedia"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 -mt-12 mb-4 relative z-10 border border-slate-100">
+                            <i data-lucide="bone" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Ortopedia</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Especialistas em lesões, fraturas musculares e
+                            saúde das articulações para devolver seus movimentos.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 3-->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover-lift fade-in-up"
+                    style="transition-delay: 200ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="img/service_ped.png" alt="Pediatria"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 -mt-12 mb-4 relative z-10 border border-slate-100">
+                            <i data-lucide="baby" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Pediatria</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Cuidado delicado e especializado para o
+                            crescimento forte e saudável de crianças e adolescentes.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 4-->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover-lift fade-in-up"
+                    style="transition-delay: 300ms;">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="img/service_neuro.png" alt="Neurologia"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-brand-900/20 group-hover:opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 -mt-12 mb-4 relative z-10 border border-slate-100">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Neurologia</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Diagnóstico avançado de perturbações do
+                            sistema nervoso central e acompanhamento rigoroso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROFISSIONAIS -->
+    <section id="profissionais" class="py-24 bg-brand-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in-up">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand-600 font-bold tracking-wide uppercase text-sm mb-3">Corpo Clínico</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-slate-900">Conheça Quem Cuida de Você</h3>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <p class="text-slate-600 text-lg md:text-right max-w-md">Uma equipe rigorosa composta pelos melhores
+                        talentos da medicina da região.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Doc 1 -->
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up">
+                    <img src="img/doc1.png" alt="Dra. Helena"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Cardiologia</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dra. Helena Barros</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Doutora em arritmias com passagem pelos principais
+                        centros de excelência, dedicando-se a um tratamento cardiovascular preciso.</p>
+                </div>
+                <!-- Doc 2 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up"
+                    style="transition-delay: 100ms;">
+                    <img src="img/doc2.png" alt="Dr. Ricardo"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Ortopedia
+                        Geral</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dr. Ricardo Gonik</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Membro honorário da Sociedade Brasileira de
+                        Ortopedia, focado em alta performance motora e reparo avançado.</p>
+                </div>
+                <!-- Doc 3 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up"
+                    style="transition-delay: 200ms;">
+                    <img src="img/doc3.png" alt="Dra. Amanda"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Neurologia</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dra. Amanda Silva</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Pesquisadora associada especializada em disfunções
+                        cognitivas. Alia muito estudo à uma consulta minuciosa.</p>
+                </div>
+                <!-- Doc 4 -->
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up">
+                    <img src="img/doc4.png" alt="Dr. Roberto"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Pediatria</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dr. Roberto Luiz</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Com mais de 15 anos acolhendo famílias, foca sua
+                        atuação no ambiente neonatal e no desenvolvimento das crianças.</p>
+                </div>
+                <!-- Doc 5 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up"
+                    style="transition-delay: 100ms;">
+                    <img src="img/doc5.png" alt="Dra. Camila"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Dermatologia</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dra. Camila Assis</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Reconhecida nas últimas conferências de
+                        dermatologia estética e clínica, traz tratamentos pontuais focados na auto-estima clínica.</p>
+                </div>
+                <!-- Doc 6 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-white hover:border-brand-200 hover-lift fade-in-up"
+                    style="transition-delay: 200ms;">
+                    <img src="img/doc6.png" alt="Dr. Marcos"
+                        class="w-full h-64 object-cover rounded-2xl mb-6 shadow-inner" />
+                    <span
+                        class="inline-block px-3 py-1 bg-blue-50 text-brand-600 text-xs font-bold rounded-full mb-3 uppercase tracking-wider">Psiquiatria</span>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Dr. Marcos Valério</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Gestor de saúde mental integrado. Especialista em
+                        regulação emocional por métodos humanistas com alta eficácia comprovada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTATO / AGENDAMENTO -->
+    <section id="contato" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-900 rounded-[3rem] overflow-hidden shadow-2xl relative flex flex-col lg:flex-row">
+
+                <!-- Background Decoration SVG -->
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 opacity-10 pointer-events-none">
+                    <svg width="404" height="404" fill="none" viewBox="0 0 404 404">
+                        <defs>
+                            <pattern id="85737c0e-0916-41d7-917f-596dc7edfa27" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+                            </pattern>
+                        </defs>
+                        <rect width="404" height="404" fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"></rect>
+                    </svg>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="p-10 lg:p-16 lg:w-1/2 flex flex-col justify-center text-white relative z-10">
+                    <span
+                        class="inline-block px-3 py-1 bg-white/10 text-brand-100 text-sm font-bold rounded-full mb-6 uppercase tracking-wider w-max border border-white/20">Fale
+                        Conosco</span>
+                    <h3 class="text-3xl md:text-4xl font-extrabold mb-6">Pronto para dar o primeiro passo pela sua
+                        saúde?</h3>
+                    <p class="text-brand-100 mb-10 text-lg">Nossa equipe de recepção está pronta para sanar dúvidas e
+                        agendar no melhor horário.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-200"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Nosso Endereço</h4>
+                                <p class="text-brand-100">Av. Rio Branco, 2000 - Centro<br>Juiz de Fora - MG, CEP:
+                                    36010-011</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-brand-200"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Horário de Funcionamento</h4>
+                                <p class="text-brand-100">Segunda a Sexta: 08h às 20h<br>Sábados: 08h às 14h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Box -->
+                <div
+                    class="lg:w-1/2 bg-brand-800 p-10 lg:p-16 flex items-center justify-center relative z-10 border-t lg:border-t-0 lg:border-l border-white/10">
+                    <div class="w-full max-w-md text-center">
+                        <div
+                            class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl relative mt-4">
+                            <i data-lucide="smartphone" class="w-10 h-10 text-green-500"></i>
+                            <!-- Green notification dot -->
+                            <span class="absolute top-0 right-0 flex h-5 w-5">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span
+                                    class="relative inline-flex rounded-full h-5 w-5 bg-green-500 border-2 border-white"></span>
+                            </span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Agende via WhatsApp</h4>
+                        <p class="text-brand-100 mb-8 border-b border-white/20 pb-8">Atendimento rápido, seguro e no
+                            conforto do seu celular. Respondemos em minutos.</p>
+
+                        <a href="https://wa.me/5532999999999" target="_blank"
+                            class="w-full flex items-center justify-center gap-3 bg-green-500 text-white font-bold text-lg px-8 py-5 rounded-2xl hover:bg-green-600 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30">
+                            Falar no WhatsApp
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12 border-b border-slate-800 pb-12">
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div
+                            class="w-8 h-8 rounded-md bg-brand-500 flex items-center justify-center text-white font-bold shadow-lg">
+                            <i data-lucide="crosshair" class="w-4 h-4"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-white">Gonik <span
+                                class="text-brand-400 font-light">Health</span></span>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Comprometidos em trazer a melhor experiência de saúde e prevenção. Conte com profissionais
+                        certificados para a sua tranquilidade.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-4">Links Rápidos</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-400 hover:text-white transition-colors text-sm">Página
+                                Inicial</a></li>
+                        <li><a href="#sobre" class="text-slate-400 hover:text-white transition-colors text-sm">Conheça a
+                                História</a></li>
+                        <li><a href="#servicos" class="text-slate-400 hover:text-white transition-colors text-sm">Áreas
+                                de Atuação</a></li>
+                        <li><a href="#profissionais"
+                                class="text-slate-400 hover:text-white transition-colors text-sm">Especialistas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-4">Avisos Legais</h5>
+                    <p class="text-slate-400 text-xs mb-4">Todas as informações contidas neste site têm caráter
+                        exclusivamente informativo. Em caso de urgências, dirija-se imediatamente a um pronto-socorro.
+                    </p>
+                    <p class="text-slate-400 text-xs text-brand-400 font-medium">Médico Responsável: Dr. Ricardo Gonik -
+                        CRM-MG 12345</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm">© 2026 Gonik Health. Todos os direitos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Scripts Principais -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
